@@ -1,0 +1,170 @@
+::-moz-selection {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Open Sans", Arial, Helvetica sans-serif;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  background: #041113;
+}
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+*:before, *:after {
+  content: "";
+}
+
+* {
+  text-decoration: none;
+  font-style: normal;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Open Sans", Arial, Helvetica sans-serif;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  background: #041113;
+}
+
+.flex, .center, header section:nth-child(2), header address, header, header section:nth-child(1) nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.center, header section:nth-child(2), header address {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.column, header, header section:nth-child(2), header address {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header {
+  background: #333333;
+  height: 61.8vh;
+}
+header section:nth-child(1) {
+  background: #0d383d;
+  height: 12%;
+}
+header section:nth-child(2) {
+  background: url(../gx/unnamed.jpg);
+  background-size: cover;
+  height: 88%;
+  position: relative;
+}
+header section:nth-child(2) h2 {
+  position: relative;
+  top: -1.1vh;
+  font-size: 6vh;
+  font-weight: 300;
+  color: #f7f7f7;
+  z-index: 2;
+  text-transform: uppercase;
+  margin: 4.4vh;
+}
+header section.lel:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../gx/noise.png);
+  z-index: 1;
+}
+header address {
+  z-index: 2;
+  background: #a70b0b;
+  height: 20vh;
+  width: 20vh
+  /*a
+   * position: relative
+   * top: -2.2vh
+   * background: $accent1
+   * padding: 10vh 2.2vh
+   * font-size: 2.2vh
+   * border-radius: 2px
+   * border-radius: 10vh
+   * height: 22.2vh
+   * transition: all ease-in-out 100ms
+   *
+   * /*&:hover
+   *   border-radius: 10vh
+   *   color: rgba(255, 255, 255, 0)
+   *   font-size: 2vh
+   *   padding: 10vh
+   *   top: 4.4vh */
+}
+header address a {
+  display: block;
+  position: relative;
+}
+
+main {
+  background: #fbfbfb;
+}
+main section {
+  padding: 4%;
+}
+main h3 {
+  font-weight: 300;
+  font-size: 4.4vh;
+}
+main p {
+  padding-top: 4.4vh;
+}
+main h3, main p {
+  color: #404040;
+}
+main section:nth-child(even) {
+  background: #f7f7f7;
+}
+
+footer {
+  background: #0d383d;
+  padding: 4%;
+}
+
+@media screen and (orientation: landscape) {
+  header {
+    height: 90vh;
+  }
+
+  main section {
+    padding: 5% 29% 4% 29%;
+  }
+  main section p {
+    font-size: 126%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
