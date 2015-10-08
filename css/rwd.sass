@@ -3,6 +3,12 @@
     header
       height: 90vh
       position: relative
+
+      &::before
+        position: absolute
+        height: $ratio2-large * 100.3%
+        bottom: 0
+
       &::after
         position: absolute
         bottom: -10vh
@@ -14,4 +20,3 @@
       section:nth-child(2)
         h2
           font-size: 10vh
-          max-width: 80%

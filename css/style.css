@@ -24,28 +24,28 @@ body {
 li {
   list-style: none; }
 
-.flex, .center-x, .center, body header section:nth-child(2), body header section:nth-child(2) address a, .center-y, body header, body header section:nth-child(1) nav ul {
+.flex, .center-x, .center, body header section:nth-child(1) nav ul li a, body header section:nth-child(2), body header section:nth-child(2) address a, .center-y, body header, body header section:nth-child(1) nav ul {
   display: flex; }
 
 .row {
   flex-direction: row; }
 
-.column, .center-x, .center, body header section:nth-child(2), body header section:nth-child(2) address a, .center-y, body header {
+.column, .center-x, .center, body header section:nth-child(1) nav ul li a, body header section:nth-child(2), body header section:nth-child(2) address a, .center-y, body header {
   flex-direction: column; }
 
-.center-x, .center, body header section:nth-child(2), body header section:nth-child(2) address a {
+.center-x, .center, body header section:nth-child(1) nav ul li a, body header section:nth-child(2), body header section:nth-child(2) address a {
   text-align: center;
   align-items: center; }
 
-.center-y, .center, body header section:nth-child(2), body header section:nth-child(2) address a {
+.center-y, .center, body header section:nth-child(1) nav ul li a, body header section:nth-child(2), body header section:nth-child(2) address a {
   justify-content: center;
   height: 100%; }
 
 .center-x-noflex {
   text-align: center; }
 
-section address a {
-  transition: all ease-in-out 250ms; }
+.circle, body header section:nth-child(2) address a {
+  border-radius: 50%; }
 
 body {
   background: #f2f2f2; }
@@ -55,20 +55,34 @@ body {
     body header::before {
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: 38.582%;
       width: 100%;
-      height: 88.176%;
+      height: 52.0356%;
       background: url(../gx/noise.png);
       z-index: 1; }
     body header section:nth-child(1) {
       background: #114b52;
-      height: 12vh; }
+      height: 12vh;
+      z-index: 3; }
+      body header section:nth-child(1) nav ul {
+        width: 80%;
+        position: relative;
+        right: -20%; }
+        body header section:nth-child(1) nav ul li {
+          height: 12vh;
+          width: 100%; }
+          body header section:nth-child(1) nav ul li a {
+            background: black;
+            width: 100%; }
+            body header section:nth-child(1) nav ul li a:hover {
+              background: #333333; }
     body header section:nth-child(2) {
       background: url(../gx/unnamed.jpg);
       background-size: cover; }
       body header section:nth-child(2) h2 {
         font-weight: 300;
-        font-size: 10vw;
+        font-size: 8vw;
+        max-width: 80%;
         z-index: 2; }
       body header section:nth-child(2) address {
         z-index: 2; }
@@ -76,15 +90,35 @@ body {
           height: 20vh;
           width: 20vh;
           padding: 2vh;
-          background: #a70b0b;
-          border-radius: 50%; }
+          background: #a70b0b; }
           body header section:nth-child(2) address a:hover {
             background: #8f0909; }
+  body main {
+    background: #e6e6e6; }
+    body main *, body main *:active {
+      color: black; }
+    body main section h3 {
+      padding: 8% 4% 4% 4%;
+      font-size: 200%;
+      font-weight: 300; }
+    body main section p {
+      padding: 4%; }
+    body main section aside {
+      background: #cccccc; }
+      body main section aside p {
+        padding: 4%; }
+  body footer {
+    background: black;
+    padding: 4%; }
 
 @media screen and (orientation: landscape) {
   body header {
     height: 90vh;
     position: relative; }
+    body header::before {
+      position: absolute;
+      height: 88.264%;
+      bottom: 0; }
     body header::after {
       position: absolute;
       bottom: -10vh;
@@ -93,7 +127,8 @@ body {
       height: 10vh;
       background: #6ad3df; }
     body header section:nth-child(2) h2 {
-      font-size: 10vh;
-      max-width: 80%; } }
+      font-size: 10vh; } }
+header * {
+  transition: all ease-in-out 250ms; }
 
 /*# sourceMappingURL=style.css.map */

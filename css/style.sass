@@ -1,8 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,latin-ext"
 @import variables
-@import resocialize
+@import resocialize_css
 @import boxxy
-@import locomotionapparatus
 
 body
   background: darken($color, 5%)
@@ -15,21 +14,33 @@ body
     &::before
       position: absolute
       left: 0
-      bottom: 0
+      bottom: $golden-small + $golden-small * 100%
       width: 100%
-      height: $ratio2-large * 100.2%
+      height: $golden-large * 84.2%
       background: url(../gx/noise.png)
       z-index: 1
 
     section:nth-child(1)
       background: lighten($accent0, 5%)
       height: $ratio2-small * 100vh
-
-
+      z-index: 3
 
       nav
         ul
           @extend .flex
+          width: 80%
+          position: relative
+          right: -20%
+          li
+            height: 12vh
+            width: 100%
+            a
+              @extend .flex, .center
+              background: black
+              width: 100%
+
+              &:hover
+                background: lighten(black, 20%)
 
     section:nth-child(2)
       @extend .center
@@ -38,19 +49,43 @@ body
 
       h2
         font-weight: 300
-        font-size: 10vw
+        font-size: 8vw
+        max-width: 80%
         z-index: 2
 
       address
         z-index: 2
         a
-          @extend .center
+          @extend .center, .circle
           height: 20vh
           width: 20vh
           padding: 2vh
           background: $accent1
-          border-radius: 50%
 
           &:hover
             background: darken($accent1, 5%)
+
+  main
+    background: darken($color, 10%)
+
+    *, *:active
+      color: black
+    section
+      h3
+        padding: 8% 4% 4% 4%
+        font-size: 200%
+        font-weight: 300
+      p
+        padding: 4%
+      aside
+        background: darken($color, 20%)
+        p
+          padding: 4%
+
+  footer
+    background: black
+    padding: 4%
+
+
 @import rwd
+@import locomotion_apparatus
