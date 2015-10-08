@@ -16,6 +16,9 @@
   font-style: normal;
   color: #fff; }
 
+* {
+  position: relative; }
+
 body {
   font-family: "Open Sans", Arial, Helvetica sans-serif;
   text-rendering: optimizeLegibility;
@@ -24,33 +27,32 @@ body {
 li {
   list-style: none; }
 
-.flex, .center-x, .center, body header section:nth-child(1) nav ul li a, body header section:nth-child(2), body header section:nth-child(2) address a, .center-y, body header, body header section:nth-child(1) nav ul {
+.flex, .center-x, .center, body header nav ul li a, body header section, body header section address a, .center-y, body header, body header nav ul, body header section address {
   display: flex; }
 
 .row {
   flex-direction: row; }
 
-.column, .center-x, .center, body header section:nth-child(1) nav ul li a, body header section:nth-child(2), body header section:nth-child(2) address a, .center-y, body header {
+.column, .center-x, .center, body header nav ul li a, body header section, body header section address a, .center-y, body header {
   flex-direction: column; }
 
-.center-x, .center, body header section:nth-child(1) nav ul li a, body header section:nth-child(2), body header section:nth-child(2) address a {
+.center-x, .center, body header nav ul li a, body header section, body header section address a {
   text-align: center;
   align-items: center; }
 
-.center-y, .center, body header section:nth-child(1) nav ul li a, body header section:nth-child(2), body header section:nth-child(2) address a {
+.center-y, .center, body header nav ul li a, body header section, body header section address a {
   justify-content: center;
   height: 100%; }
 
 .center-x-noflex {
   text-align: center; }
 
-.circle, body header section:nth-child(2) address a {
+.circle, body header section address a {
   border-radius: 50%; }
 
 body {
   background: #f2f2f2; }
   body header {
-    background: #0d383d;
     height: 61.8vh; }
     body header::before {
       position: absolute;
@@ -59,44 +61,68 @@ body {
       width: 100%;
       height: 52.0356%;
       background: url(../gx/noise.png);
+      opacity: 0.1;
       z-index: 1; }
-    body header section:nth-child(1) {
-      background: #114b52;
+    body header nav {
+      background: #24585b;
       height: 12vh;
+      position: fixed;
+      width: 100%;
       z-index: 3; }
-      body header section:nth-child(1) nav ul {
+      body header nav ul {
         width: 80%;
         position: relative;
         right: -20%; }
-        body header section:nth-child(1) nav ul li {
+        body header nav ul li {
           height: 12vh;
           width: 100%; }
-          body header section:nth-child(1) nav ul li a {
+          body header nav ul li a {
             background: black;
             width: 100%; }
-            body header section:nth-child(1) nav ul li a:hover {
+            body header nav ul li a:hover {
               background: #333333; }
-    body header section:nth-child(2) {
+    body header section {
       background: url(../gx/unnamed.jpg);
       background-size: cover; }
-      body header section:nth-child(2) h2 {
+      body header section h2 {
         font-weight: 300;
         font-size: 8vw;
         max-width: 80%;
+        z-index: 2;
+        bottom: -12vh; }
+      body header section address {
         z-index: 2; }
-      body header section:nth-child(2) address {
-        z-index: 2; }
-        body header section:nth-child(2) address a {
+        body header section address a {
           height: 20vh;
           width: 20vh;
           padding: 2vh;
-          background: #a70b0b; }
-          body header section:nth-child(2) address a:hover {
-            background: #8f0909; }
+          background: #be362f;
+          bottom: -22vh; }
+        body header section address a[href^="tel"] {
+          box-shadow: 0 0 300px 0 #000, 0 0 300px 0 #000, 0 0 300px 0 #000; }
+          body header section address a[href^="tel"]:hover {
+            background: #aa302a; }
+        body header section address a[href^="mailto"] {
+          background: #365f42;
+          width: 10vh;
+          height: 10vh;
+          bottom: -27vh;
+          z-index: 3; }
+          body header section address a[href^="mailto"]:hover {
+            background: #aa302a; }
+        body header section address a[href^="dunno"] {
+          background: #5b49a0;
+          width: 10vh;
+          height: 10vh;
+          bottom: -27vh;
+          z-index: 3; }
+          body header section address a[href^="dunno"]:hover {
+            background: #aa302a; }
   body main {
-    background: #e6e6e6; }
+    background: #e6e6e6;
+    z-index: 4; }
     body main *, body main *:active {
-      color: black; }
+      color: #2b2b2b; }
     body main section h3 {
       padding: 8% 4% 4% 4%;
       font-size: 200%;
@@ -108,26 +134,38 @@ body {
       body main section aside p {
         padding: 4%; }
   body footer {
-    background: black;
+    background: #2b2b2b;
     padding: 4%; }
 
-@media screen and (orientation: landscape) {
-  body header {
-    height: 90vh;
-    position: relative; }
-    body header::before {
-      position: absolute;
-      height: 88.264%;
-      bottom: 0; }
-    body header::after {
-      position: absolute;
-      bottom: -10vh;
-      left: 0;
-      right: 0;
-      height: 10vh;
-      background: #6ad3df; }
-    body header section:nth-child(2) h2 {
-      font-size: 10vh; } }
+@media all and (orientation: landscape) {
+  .re-flex, body main section, body footer {
+    display: flex; }
+
+  body {
+    height: 200vh; }
+    body header {
+      height: 100vh;
+      position: relative; }
+      body header::before {
+        position: absolute;
+        height: 88.264%;
+        bottom: 0; }
+      body header::after {
+        content: "skroluj!";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 10vh;
+        width: 20%;
+        background: #000; }
+      body header section h2 {
+        font-size: 8vh;
+        max-width: 60%; }
+    body main section {
+      padding: 0 20%; }
+    body footer {
+      background: #1a1a1a;
+      z-index: 9; } }
 header * {
   transition: all ease-in-out 250ms; }
 
