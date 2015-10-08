@@ -1,13 +1,31 @@
 //hello, my name is
 //_boxxy.sass
 
+
+// display
 .flex
   display: flex
 
-.center
-  @extend .flex
-  justify-content: center
-  text-align: center
+.row
+  flex-direction: row
 
 .column
   flex-direction: column
+
+.center-x
+  @extend .flex, .column
+  text-align: center
+  align-items: center
+
+
+.center-y
+  @extend .flex, .column
+  justify-content: center
+  height: 100%
+
+.center
+  @extend .center-x, .center-y
+
+
+.center-x-noflex
+  text-align: center

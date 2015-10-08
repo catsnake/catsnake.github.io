@@ -1,40 +1,29 @@
-//_a project on its own
-//_it combines css reset
+//_css reset combined
 //_with css normalize
-//BEHOLD
+//_BEHOLD
 //_resocialize.sass
 
 ::selection
   background: $bl
 
-li
-  list-style: none
-
-body
-  font-family: $font
-  text-rendering: optimizeLegibility
-  text-rendering: geometricPrecision
-  background: darken($accent0, 10%)
-
-*, *:before, *:after
+*, *::before, *::after
   margin: 0
   padding: 0
   box-sizing: border-box
   border: none
 
-*:before, *:after
+*::before, *::after
   content: ""
 
-*
+*, *:active, *:visited
   text-decoration: none
   font-style: normal
   color: $global-font-color
-
-li
-  list-style: none
 
 body
   font-family: $font
   text-rendering: optimizeLegibility
   text-rendering: geometricPrecision
-  background: darken($accent0, 10%)
+
+li
+  list-style: none
