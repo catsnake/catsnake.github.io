@@ -10,9 +10,15 @@ body
     @extend .flex, .column
     height: $golden-large * 100vh
 
+    h1
+      z-index: 8889
+      position: fixed
+      top: 3.5vh
+      left: 12vh
+
     figure
       @extend .circle
-      background: $color1 url('../gx/catsnake.svg') no-repeat
+      background: $color url('../gx/catsnake.svg') no-repeat
       background-size: 80%
       background-position: center
       position: fixed
@@ -25,7 +31,7 @@ body
       z-index: 8889
 
       &:hover
-        background: $black2 url('../gx/catsnake.svg') no-repeat
+        background: darken($color, 30%) url('../gx/catsnake.svg') no-repeat
         background-size: 80%
         background-position: center
 

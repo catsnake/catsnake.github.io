@@ -80,8 +80,14 @@ body {
 body header {
   height: 61.8vh;
 }
+body header h1 {
+  z-index: 8889;
+  position: fixed;
+  top: 3.5vh;
+  left: 12vh;
+}
 body header figure {
-  background: #000 url("../gx/catsnake.svg") no-repeat;
+  background: #fff url("../gx/catsnake.svg") no-repeat;
   background-size: 80%;
   background-position: center;
   position: fixed;
@@ -94,7 +100,7 @@ body header figure {
   z-index: 8889;
 }
 body header figure:hover {
-  background: #262626 url("../gx/catsnake.svg") no-repeat;
+  background: #b3b3b3 url("../gx/catsnake.svg") no-repeat;
   background-size: 80%;
   background-position: center;
 }
