@@ -10,6 +10,25 @@ body
     @extend .flex, .column
     height: $golden-large * 100vh
 
+    figure
+      @extend .circle
+      background: $color1 url('../gx/catsnake.svg') no-repeat
+      background-size: 80%
+      background-position: center
+      position: fixed
+      top: 0
+      left: 0
+      height: 8vh
+      width: 8vh
+      top: 2vh
+      left: 2vh
+      z-index: 8889
+
+      &:hover
+        background: $black2 url('../gx/catsnake.svg') no-repeat
+        background-size: 80%
+        background-position: center
+
     nav
       background: $accent0
       height: $ratio2-small * 100vh
@@ -44,19 +63,12 @@ body
       right: 0
 
       h2
-        @extend .flex, .center
+        @extend .flex, .center, .no-select
         height: 100%
         font-weight: 300
         font-size: 8vw
         max-width: 80%
         text-shadow: 0 0 100px 0 $color1, 0 0 200px 0 $color1, 0 0 300px 0 $color1
-        -webkit-touch-callout: none
-        -webkit-user-select: none
-        -khtml-user-select: none
-        -moz-user-select: none
-        -ms-user-select: none
-        user-select: none
-        cursor: default
         @media all and (orientation : portrait)
           top: -14vh
 
@@ -67,6 +79,7 @@ body
         bottom: $golden-small * 100vh
         left: 0
         right: 0
+
         a
           @extend .center, .circle
           height: 16vh

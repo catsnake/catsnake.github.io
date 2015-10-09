@@ -1,171 +1,241 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,latin-ext";
 ::selection {
-  background: rgba(0, 0, 0, 0.3); }
+  background: rgba(0, 0, 0, 0.3);
+}
 
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: none; }
+  border: none;
+}
 
 *::before, *::after {
-  content: ""; }
+  content: "";
+}
 
 *, *:active, *:visited {
   text-decoration: none;
   font-style: normal;
-  color: #fff; }
+  color: #fff;
+}
 
 * {
-  position: relative; }
+  position: relative;
+}
 
 body {
   font-family: "Open Sans", Arial, Helvetica sans-serif;
   text-rendering: optimizeLegibility;
-  text-rendering: geometricPrecision; }
+  text-rendering: geometricPrecision;
+}
 
 li {
-  list-style: none; }
+  list-style: none;
+}
+
+.no-select, body header section h2 {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
 
 .flex, .center-x, .center, body header nav ul li a, body header section, body header section h2, body header section address a, .center-y, body header, body header nav ul, body header section address {
-  display: flex; }
+  display: flex;
+}
 
 .row {
-  flex-direction: row; }
+  flex-direction: row;
+}
 
 .column, .center-x, .center, body header nav ul li a, body header section, body header section h2, body header section address a, .center-y, body header {
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 .center-x, .center, body header nav ul li a, body header section, body header section h2, body header section address a {
   text-align: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .center-y, .center, body header nav ul li a, body header section, body header section h2, body header section address a {
   justify-content: center;
-  height: 100%; }
+  height: 100%;
+}
 
 .center-x-noflex {
-  text-align: center; }
+  text-align: center;
+}
 
-.circle, body header section address a {
-  border-radius: 50%; }
+.circle, body header figure, body header section address a {
+  border-radius: 50%;
+}
 
 body {
-  background: #f2f2f2; }
-  body header {
-    height: 61.8vh; }
-    body header nav {
-      background: #1d4649;
-      height: 12vh;
-      position: fixed;
-      width: 100%;
-      z-index: 8888; }
-      body header nav ul {
-        width: 80%;
-        position: relative;
-        right: -20%; }
-        body header nav ul li {
-          height: 12vh;
-          width: 100%; }
-          body header nav ul li a {
-            background: #000;
-            width: 100%; }
-            body header nav ul li a:hover {
-              background: #262626; }
-    body header section {
-      background: url("../gx/unnamed.jpg");
-      background-size: cover;
-      position: fixed;
-      left: 0;
-      right: 0; }
-      body header section h2 {
-        height: 100%;
-        font-weight: 300;
-        font-size: 8vw;
-        max-width: 80%;
-        text-shadow: 0 0 100px 0 #000, 0 0 200px 0 #000, 0 0 300px 0 #000;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: default; }
-        @media all and (orientation: portrait) {
-          body header section h2 {
-            top: -14vh; } }
-      body header section address {
-        justify-content: center;
-        position: absolute;
-        bottom: 38.2vh;
-        left: 0;
-        right: 0; }
-        body header section address a {
-          height: 16vh;
-          width: 16vh;
-          padding: 2vh;
-          background: #e54941;
-          z-index: 3; }
-        body header section address a[href^="tel"] {
-          box-shadow: 0 0 300px 0 #000, 0 0 300px 0 #000, 0 0 300px 0 #000;
-          top: -2vh;
-          z-index: 3; }
-          body header section address a[href^="tel"]:hover, body header section address a[href^="tel"]:active {
-            background: #be362f; }
-        body header section address a[href^="mailto"] {
-          background: #365f42;
-          width: 8vh;
-          height: 8vh;
-          top: 2vh;
-          z-index: 4; }
-          body header section address a[href^="mailto"]:hover, body header section address a[href^="mailto"]:active {
-            background: #2e5037; }
-        body header section address a[href^="dunno"] {
-          background: #745fc3;
-          width: 8vh;
-          height: 8vh;
-          top: 2vh;
-          z-index: 4; }
-          body header section address a[href^="dunno"]:hover, body header section address a[href^="dunno"]:active {
-            background: #5b49a0; }
-  body main {
-    background: #e6e6e6;
-    z-index: 4; }
-    body main *, body main *:active {
-      color: #2b2b2b; }
-    body main section h3, body main section h4 {
-      padding: 8% 4% 4% 4%;
-      font-size: 200%;
-      font-weight: 300; }
-    body main section p {
-      padding: 4%; }
-    body main section aside {
-      background: #cccccc; }
-      body main section aside p {
-        padding: 4%; }
-  body footer {
-    background: #2b2b2b;
-    padding: 4%; }
+  background: #f2f2f2;
+}
+body header {
+  height: 61.8vh;
+}
+body header figure {
+  background: #000 url("../gx/catsnake.svg") no-repeat;
+  background-size: 80%;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8vh;
+  width: 8vh;
+  top: 2vh;
+  left: 2vh;
+  z-index: 8889;
+}
+body header figure:hover {
+  background: #262626 url("../gx/catsnake.svg") no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+body header nav {
+  background: #1d4649;
+  height: 12vh;
+  position: fixed;
+  width: 100%;
+  z-index: 8888;
+}
+body header nav ul {
+  width: 80%;
+  position: relative;
+  right: -20%;
+}
+body header nav ul li {
+  height: 12vh;
+  width: 100%;
+}
+body header nav ul li a {
+  background: #000;
+  width: 100%;
+}
+body header nav ul li a:hover {
+  background: #262626;
+}
+body header section {
+  background: url("../gx/unnamed.jpg");
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+body header section h2 {
+  height: 100%;
+  font-weight: 300;
+  font-size: 8vw;
+  max-width: 80%;
+  text-shadow: 0 0 100px 0 #000, 0 0 200px 0 #000, 0 0 300px 0 #000;
+}
+@media all and (orientation: portrait) {
+  body header section h2 {
+    top: -14vh;
+  }
+}
+body header section address {
+  justify-content: center;
+  position: absolute;
+  bottom: 38.2vh;
+  left: 0;
+  right: 0;
+}
+body header section address a {
+  height: 16vh;
+  width: 16vh;
+  padding: 2vh;
+  background: #e54941;
+  z-index: 3;
+}
+body header section address a[href^="tel"] {
+  box-shadow: 0 0 300px 0 #000, 0 0 300px 0 #000, 0 0 300px 0 #000;
+  top: -2vh;
+  z-index: 3;
+}
+body header section address a[href^="tel"]:hover, body header section address a[href^="tel"]:active {
+  background: #be362f;
+}
+body header section address a[href^="mailto"] {
+  background: #365f42;
+  width: 8vh;
+  height: 8vh;
+  top: 2vh;
+  z-index: 4;
+}
+body header section address a[href^="mailto"]:hover, body header section address a[href^="mailto"]:active {
+  background: #2e5037;
+}
+body header section address a[href^="dunno"] {
+  background: #745fc3;
+  width: 8vh;
+  height: 8vh;
+  top: 2vh;
+  z-index: 4;
+}
+body header section address a[href^="dunno"]:hover, body header section address a[href^="dunno"]:active {
+  background: #5b49a0;
+}
+body main {
+  background: #e6e6e6;
+  z-index: 4;
+}
+body main *, body main *:active {
+  color: #2b2b2b;
+}
+body main section h3, body main section h4 {
+  padding: 8% 4% 4% 4%;
+  font-size: 200%;
+  font-weight: 300;
+}
+body main section p {
+  padding: 4%;
+}
+body main section aside {
+  background: #cccccc;
+}
+body main section aside p {
+  padding: 4%;
+}
+body footer {
+  background: #2b2b2b;
+  padding: 4%;
+}
 
 @media all and (orientation: landscape) {
   .re-flex, body main section, body footer {
-    display: flex; }
+    display: flex;
+  }
 
   body {
-    height: 200vh; }
-    body header {
-      height: 100vh; }
-      body header section h2 {
-        font-size: 8vh;
-        max-width: 60%; }
-      body header section address {
-        bottom: 0; }
-    body main section {
-      padding: 0 20%; }
-    body footer {
-      background: #1a1a1a;
-      z-index: 9; } }
+    height: 200vh;
+  }
+  body header {
+    height: 100vh;
+  }
+  body header section h2 {
+    font-size: 8vh;
+    max-width: 60%;
+  }
+  body header section address {
+    bottom: 0;
+  }
+  body main section {
+    padding: 0 20%;
+  }
+  body footer {
+    background: #1a1a1a;
+    z-index: 9;
+  }
+}
 header * {
-  transition: all ease-in-out 250ms; }
+  transition: all ease-in-out 250ms;
+}
 
 /*# sourceMappingURL=style.css.map */
