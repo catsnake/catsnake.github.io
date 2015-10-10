@@ -7,28 +7,26 @@ body
   background: darken($color, 5%)
 
   header
-    @extend .flex, .column
+    @extend %flex, %column
     height: $golden-large * 100vh
 
-    h1
+    figure
+      @extend %center, %fixed
+      width: 20%
+      height: $ratio2-small * 100vh
       z-index: 8889
-      position: fixed
+
+      object
+        height: $size1
+        width: $size1
+        z-index: 9999
+
+    h1
+      @extend %fixed
+      font-weight: 300
+      z-index: 8889
       top: 3.5vh
       left: 12vh
-
-    figure
-      @extend .circle
-      background: $color url('../gx/catsnake.svg') no-repeat
-      background-size: 80%
-      background-position: center
-      position: fixed
-      top: 0
-      left: 0
-      height: 8vh
-      width: 8vh
-      top: 2vh
-      left: 2vh
-      z-index: 8889
 
       &:hover
         background: darken($color, 30%) url('../gx/catsnake.svg') no-repeat
@@ -36,24 +34,22 @@ body
         background-position: center
 
     nav
+      @extend %fixed
       background: $accent0
       height: $ratio2-small * 100vh
-      position: fixed
-      width: 100%
       z-index: 8888
 
       ul
-        @extend .flex
+        @extend %flex
         width: 80%
-        position: relative
         right: -20%
 
         li
-          height: 12vh
+          height: $ratio2-small * 100vh
           width: 100%
 
           a
-            @extend .flex, .center
+            @extend %flex, %center
             background: $color1
             width: 100%
 
@@ -61,42 +57,34 @@ body
               background: $black2
 
     section
-      @extend .center
+      @extend %center, %fixed
       background: url('../gx/unnamed.jpg')
       background-size: cover
-      position: fixed
-      left: 0
-      right: 0
 
       h2
-        @extend .flex, .center, .no-select
+        @extend %flex, %center, %no-select
         height: 100%
         font-weight: 300
-        font-size: 8vw
+        font-size: $size1
         max-width: 80%
-        text-shadow: 0 0 100px 0 $color1, 0 0 200px 0 $color1, 0 0 300px 0 $color1
         @media all and (orientation : portrait)
           top: -14vh
 
       address
-        @extend .flex
+        @extend %flex, %absolute
         justify-content: center
-        position: absolute
         bottom: $golden-small * 100vh
-        left: 0
-        right: 0
 
         a
-          @extend .center, .circle
-          height: 16vh
-          width: 16vh
+          @extend %center, %circle
+          height: $size1 * $phi
+          width: $size1 * $phi
           padding: 2vh
           background: $red
           z-index: 3
 
 
         a[href^="tel"]
-          box-shadow: 0 0 300px 0 $color1, 0 0 300px 0 $color1, 0 0 300px 0 $color1
           top: -2vh
           z-index: 3
 
@@ -105,8 +93,8 @@ body
 
         a[href^="mailto"]
           background: $wetgreen
-          width: 8vh
-          height: 8vh
+          width: $size1
+          height: $size1
           top: 2vh
           z-index: 4
 
@@ -116,8 +104,8 @@ body
 
         a[href^="dunno"]
           background: $purple
-          width: 8vh
-          height: 8vh
+          width: $size1
+          height: $size1
           top: 2vh
           z-index: 4
 

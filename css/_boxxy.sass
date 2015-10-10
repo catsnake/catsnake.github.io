@@ -1,0 +1,43 @@
+//hello, my name is
+//_boxxy.sass
+
+
+// display
+%flex
+  display: flex
+
+%row
+  flex-direction: row
+
+%column
+  flex-direction: column
+
+%center-x
+  @extend %flex, %column
+  text-align: center
+  align-items: center
+
+%center-y
+  @extend %flex, %column
+  justify-content: center
+  height: 100%
+
+%center
+  @extend %center-x, %center-y
+
+
+%center-x-noflex
+  text-align: center
+
+%circle
+  border-radius: 50%
+
+%fixed
+  position: fixed
+  left: 0
+  right: 0
+
+%absolute
+  position: absolute
+  left: 0
+  right: 0

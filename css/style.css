@@ -1,8 +1,4 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,latin-ext";
-::selection {
-  background: rgba(0, 0, 0, 0.3);
-}
-
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -14,7 +10,7 @@
   content: "";
 }
 
-*, *:active, *:visited {
+*, *:active, *:visited, *:active {
   text-decoration: none;
   font-style: normal;
   color: #fff;
@@ -22,6 +18,7 @@
 
 * {
   position: relative;
+  background: none;
 }
 
 body {
@@ -34,7 +31,7 @@ li {
   list-style: none;
 }
 
-.no-select, body header section h2 {
+body header section h2 {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -44,34 +41,59 @@ li {
   cursor: default;
 }
 
-.flex, .center-x, .center, body header nav ul li a, body header section, body header section h2, body header section address a, .center-y, body header, body header nav ul, body header section address {
+::-moz-selection {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+body header figure, body header nav ul li a, body header section, body header section h2, body header section address a, body header, body header nav ul, body header section address {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
-.row {
-  flex-direction: row;
+body header figure, body header nav ul li a, body header section, body header section h2, body header section address a, body header {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.column, .center-x, .center, body header nav ul li a, body header section, body header section h2, body header section address a, .center-y, body header {
-  flex-direction: column;
-}
-
-.center-x, .center, body header nav ul li a, body header section, body header section h2, body header section address a {
+body header figure, body header nav ul li a, body header section, body header section h2, body header section address a {
   text-align: center;
-  align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.center-y, .center, body header nav ul li a, body header section, body header section h2, body header section address a {
-  justify-content: center;
+body header figure, body header nav ul li a, body header section, body header section h2, body header section address a {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100%;
 }
 
-.center-x-noflex {
-  text-align: center;
+body header section address a {
+  border-radius: 50%;
 }
 
-.circle, body header figure, body header section address a {
-  border-radius: 50%;
+body header figure, body header h1, body header nav, body header section {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+body header section address {
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 body {
@@ -80,44 +102,38 @@ body {
 body header {
   height: 61.8vh;
 }
-body header h1 {
+body header figure {
+  width: 20%;
+  height: 10vh;
   z-index: 8889;
-  position: fixed;
+}
+body header figure object {
+  height: 8vh;
+  width: 8vh;
+  z-index: 9999;
+}
+body header h1 {
+  font-weight: 300;
+  z-index: 8889;
   top: 3.5vh;
   left: 12vh;
 }
-body header figure {
-  background: #fff url("../gx/catsnake.svg") no-repeat;
-  background-size: 80%;
-  background-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 8vh;
-  width: 8vh;
-  top: 2vh;
-  left: 2vh;
-  z-index: 8889;
-}
-body header figure:hover {
+body header h1:hover {
   background: #b3b3b3 url("../gx/catsnake.svg") no-repeat;
   background-size: 80%;
   background-position: center;
 }
 body header nav {
   background: #1d4649;
-  height: 12vh;
-  position: fixed;
-  width: 100%;
+  height: 10vh;
   z-index: 8888;
 }
 body header nav ul {
   width: 80%;
-  position: relative;
   right: -20%;
 }
 body header nav ul li {
-  height: 12vh;
+  height: 10vh;
   width: 100%;
 }
 body header nav ul li a {
@@ -130,16 +146,12 @@ body header nav ul li a:hover {
 body header section {
   background: url("../gx/unnamed.jpg");
   background-size: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
 }
 body header section h2 {
   height: 100%;
   font-weight: 300;
-  font-size: 8vw;
+  font-size: 8vh;
   max-width: 80%;
-  text-shadow: 0 0 100px 0 #000, 0 0 200px 0 #000, 0 0 300px 0 #000;
 }
 @media all and (orientation: portrait) {
   body header section h2 {
@@ -147,21 +159,20 @@ body header section h2 {
   }
 }
 body header section address {
-  justify-content: center;
-  position: absolute;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   bottom: 38.2vh;
-  left: 0;
-  right: 0;
 }
 body header section address a {
-  height: 16vh;
-  width: 16vh;
+  height: 12.944vh;
+  width: 12.944vh;
   padding: 2vh;
   background: #e54941;
   z-index: 3;
 }
 body header section address a[href^="tel"] {
-  box-shadow: 0 0 300px 0 #000, 0 0 300px 0 #000, 0 0 300px 0 #000;
   top: -2vh;
   z-index: 3;
 }
@@ -216,6 +227,9 @@ body footer {
 
 @media all and (orientation: landscape) {
   .re-flex, body main section, body footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
   }
 
@@ -241,7 +255,8 @@ body footer {
   }
 }
 header * {
-  transition: all ease-in-out 250ms;
+  -webkit-transition: all ease-in-out 250ms;
+          transition: all ease-in-out 250ms;
 }
 
 /*# sourceMappingURL=style.css.map */

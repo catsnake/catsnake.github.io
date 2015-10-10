@@ -1,12 +1,7 @@
 //_css reset combined
 //_with css normalize
 //_BEHOLD
-//_resocialize.sass
-
-::selection
-  background: $bl
-
-
+//_resocialize_css.sass
 
 *, *::before, *::after
   margin: 0
@@ -17,13 +12,14 @@
 *::before, *::after
   content: ""
 
-*, *:active, *:visited
+*, *:active, *:visited, *:active
   text-decoration: none
   font-style: normal
   color: $color
 
 *
   position: relative
+  background: none
 
 body
   font-family: $font
@@ -33,7 +29,7 @@ body
 li
   list-style: none
 
-.no-select
+%no-select
   -webkit-touch-callout: none
   -webkit-user-select: none
   -khtml-user-select: none
@@ -41,3 +37,6 @@ li
   -ms-user-select: none
   user-select: none
   cursor: default
+
+::selection
+  background: $bl
