@@ -3,16 +3,21 @@
 @import resocialize_css
 @import boxxy
 
+$spacer1: 0.042
+$multiplier: 400
+
 body
-  background: darken($color, 5%)
 
   header
     @extend %flex, %column
     height: $golden-large * 100vh
 
     figure
-      @extend %center, %fixed
-      width: 20%
+      @extend %center, %absolute
+      background: $bg
+      width: (100% - $spacer1 * $multiplier) / 5
+      left: (100% - (100% - $spacer1 * $multiplier)) / 2
+      top: (100% - (100% - $spacer1 * $multiplier)) / (2 * $phi)
       height: $ratio2-small * 100vh
       z-index: 8889
 
@@ -21,29 +26,19 @@ body
         width: $size1
         z-index: 9999
 
-    h1
-      @extend %fixed
-      font-weight: 300
-      z-index: 8889
-      top: 3.5vh
-      left: 12vh
-
-      &:hover
-        background: darken($color, 30%) url('../gx/catsnake.svg') no-repeat
-        background-size: 80%
-        background-position: center
-
     nav
-      @extend %fixed
-      background: $accent0
+      @extend %absolute
       height: $ratio2-small * 100vh
+      background: $pink
+      width: 100% - $spacer1 * $multiplier
+      left: (100% - (100% - $spacer1 * $multiplier)) / 2
+      top: (100% - (100% - $spacer1 * $multiplier)) / (2 * $phi)
       z-index: 8888
 
       ul
         @extend %flex
         width: 80%
         right: -20%
-
         li
           height: $ratio2-small * 100vh
           width: 100%
@@ -58,15 +53,19 @@ body
 
     section
       @extend %center, %fixed
-      background: url('../gx/unnamed.jpg')
+      background: url('../gx/2q.png')
+      /*background: $maroon
       background-size: cover
 
       h2
-        @extend %flex, %center, %no-select
+        @extend %flex, %center-y, %no-select
+        text-align: left
         height: 100%
         font-weight: 300
         font-size: $size1
-        max-width: 80%
+        max-width: ((100% - $spacer1 * $multiplier) - ((100% - $spacer1 * $multiplier) / 5))
+        left: (100% - (100% - $spacer1 * $multiplier)) / 2
+        border: 1px solid
         @media all and (orientation : portrait)
           top: -14vh
 
@@ -110,11 +109,11 @@ body
           z-index: 4
 
           &:hover, &:active
-            background: $purle2
+            background: $purple2
 
 
   main
-    background: darken($color, 10%)
+    background: $bg
     z-index: 4
     *, *:active
       color: $black

@@ -1,4 +1,9 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,latin-ext";
+html {
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -23,8 +28,6 @@
 
 body {
   font-family: "Open Sans", Arial, Helvetica sans-serif;
-  text-rendering: optimizeLegibility;
-  text-rendering: geometricPrecision;
 }
 
 li {
@@ -49,14 +52,14 @@ body header section h2 {
   background: rgba(0, 0, 0, 0.3);
 }
 
-body header figure, body header nav ul li a, body header section, body header section h2, body header section address a, body header, body header nav ul, body header section address {
+body header figure, body header nav ul li a, body header section, body header section address a, body header section h2, body header, body header nav ul, body header section address {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-body header figure, body header nav ul li a, body header section, body header section h2, body header section address a, body header {
+body header figure, body header nav ul li a, body header section, body header section address a, body header section h2, body header {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -64,7 +67,7 @@ body header figure, body header nav ul li a, body header section, body header se
           flex-direction: column;
 }
 
-body header figure, body header nav ul li a, body header section, body header section h2, body header section address a {
+body header figure, body header nav ul li a, body header section, body header section address a {
   text-align: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -72,7 +75,7 @@ body header figure, body header nav ul li a, body header section, body header se
           align-items: center;
 }
 
-body header figure, body header nav ul li a, body header section, body header section h2, body header section address a {
+body header figure, body header nav ul li a, body header section, body header section address a, body header section h2 {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -84,26 +87,26 @@ body header section address a {
   border-radius: 50%;
 }
 
-body header figure, body header h1, body header nav, body header section {
+body header section {
   position: fixed;
   left: 0;
   right: 0;
 }
 
-body header section address {
+body header figure, body header nav, body header section address {
   position: absolute;
   left: 0;
   right: 0;
 }
 
-body {
-  background: #f2f2f2;
-}
 body header {
   height: 61.8vh;
 }
 body header figure {
-  width: 20%;
+  background: #e1e3e4;
+  width: 16.64%;
+  left: 8.4%;
+  top: 5.19159%;
   height: 10vh;
   z-index: 8889;
 }
@@ -112,20 +115,12 @@ body header figure object {
   width: 8vh;
   z-index: 9999;
 }
-body header h1 {
-  font-weight: 300;
-  z-index: 8889;
-  top: 3.5vh;
-  left: 12vh;
-}
-body header h1:hover {
-  background: #b3b3b3 url("../gx/catsnake.svg") no-repeat;
-  background-size: 80%;
-  background-position: center;
-}
 body header nav {
-  background: #1d4649;
   height: 10vh;
+  background: #f27bc2;
+  width: 83.2%;
+  left: 8.4%;
+  top: 5.19159%;
   z-index: 8888;
 }
 body header nav ul {
@@ -144,14 +139,18 @@ body header nav ul li a:hover {
   background: #262626;
 }
 body header section {
-  background: url("../gx/unnamed.jpg");
+  background: url("../gx/2q.png");
+  /*background: $maroon */
   background-size: cover;
 }
 body header section h2 {
+  text-align: left;
   height: 100%;
   font-weight: 300;
   font-size: 8vh;
-  max-width: 80%;
+  max-width: 66.56%;
+  left: 8.4%;
+  border: 1px solid;
 }
 @media all and (orientation: portrait) {
   body header section h2 {
@@ -200,7 +199,7 @@ body header section address a[href^="dunno"]:hover, body header section address 
   background: #5b49a0;
 }
 body main {
-  background: #e6e6e6;
+  background: #e1e3e4;
   z-index: 4;
 }
 body main *, body main *:active {
@@ -226,7 +225,7 @@ body footer {
 }
 
 @media all and (orientation: landscape) {
-  .re-flex, body main section, body footer {
+  body main section, body footer {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -241,7 +240,6 @@ body footer {
   }
   body header section h2 {
     font-size: 8vh;
-    max-width: 60%;
   }
   body header section address {
     bottom: 0;
@@ -255,8 +253,8 @@ body footer {
   }
 }
 header * {
-  -webkit-transition: all ease-in-out 250ms;
-          transition: all ease-in-out 250ms;
+  -webkit-transition: background ease-in-out 250ms;
+          transition: background ease-in-out 250ms;
 }
 
 /*# sourceMappingURL=style.css.map */

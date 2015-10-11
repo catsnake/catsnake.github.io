@@ -1,6 +1,6 @@
 @media all and (orientation : landscape)
 
-  .re-flex
+  %flexx
     display: flex
 
   body
@@ -12,17 +12,16 @@
       section
         h2
           font-size: 8vh
-          max-width: 60%
 
         address
           bottom: 0
 
     main
       section
-        @extend .re-flex
+        @extend %flexx
         padding: 0 20%
 
     footer
-      @extend .re-flex
+      @extend %flexx
       background: lighten(black, 10%)
       z-index: 9
